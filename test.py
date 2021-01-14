@@ -12,26 +12,11 @@ import os
 basedir = os.path.dirname(os.path.abspath(__file__))
 
 def get_data():
-    filename = os.path.join(basedir,"data/data1.json")
-    
-    with open(filename,"r",encoding='utf-8', errors='ignore') as fp:
-        data = json.load(fp)
-    
-    filename = os.path.join(basedir,"data/data2.json")
-    with open(filename,"r",encoding='utf-8', errors='ignore') as fp:
-        data += json.load(fp)
-        
-    ret = []
-    seen = []
-    for d in data:
-        d["title"] = d["title"].lower()
-        
-        t = tokenizer.tokenize(d["title"])
-        seen.append(d["title"])
-        ret.append(t)
-        
-    return ret
+    """Returns a list containing a list of tokens"""
+    data = []
+    return data
 
+# Topics in the developers space
 topics = set([
     "programming",
     "web",
